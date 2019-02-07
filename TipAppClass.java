@@ -19,6 +19,7 @@ public class TipAppClass
     {
       try
       {
+        //Get user input.
         System.out.print("Enter the bill amount: ");
         billAmt = input.nextDouble();
         
@@ -33,10 +34,11 @@ public class TipAppClass
       }
       catch(Exception e)
       {
+        //If user enters something non-numeric, it will catch it.
         System.out.print("Please enter a valid number. \n");
         input.next();
       }
-    }while(check == false);
+    }while(check == false); //Loop ends when user enters a number greater than zero.
     
     
   }
