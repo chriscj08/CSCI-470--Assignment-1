@@ -6,7 +6,23 @@ public class TipAppClass
   
   public static void main(String[] args)
   {
-    calculateTips();
+    Scanner input2 = new Scanner(System.in);
+    boolean cond = true;
+    while (cond)
+    {
+      calculateTips();
+      System.out.print("Another bill? (y/n)\n");
+      String answer = input2.nextLine();
+      
+      if (new String(answer).equals("n") || new String(answer).equals("N"))
+      {
+        System.out.print("See ya later. ");
+        cond = false;
+      }
+      else if (answer != "y" || answer != "Y")
+      {
+      } 
+    }
   }
   
   public static void calculateTips()
@@ -98,9 +114,12 @@ public class TipAppClass
                      
     System.out.print("***** The Bill *****\n\n");
                      
-    System.out.print("Bill amount: $" + calculator.getBill() + "\n");
+    System.out.printf("Bill amount: $%.2f\n", calculator.getBill());
     System.out.print("Tip percent: " + calculator.getTipPercentage() + "%\n");
-    System.out.print("Party size: " + calculator.getPartySize() + "\n");                 
+    System.out.print("Party size: " + calculator.getPartySize() + "\n\n"); 
+    
+    System.out.printf("Total bill (tip included): $%.2f\n", calculator.getTotalBill());
+    System.out.printf("Each persons share: $%.2f\n\n", calculator.getIndividualShare());
   }
 }
     

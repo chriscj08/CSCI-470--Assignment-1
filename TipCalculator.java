@@ -51,7 +51,7 @@ public class TipCalculator
   //getTotalBill() returns the total including tip.
   public double getTotalBill()
   {
-    return (getBill() + (getBill() * getTipPercentage()));  //Java automatically typecasts ints to doubles when multiplying them together.
+    return (getBill() + ((getBill() * getTipPercentage())/100));  //Java automatically typecasts ints to doubles when multiplying them together.
   }
   
   //getIndividualShare() returns the amount each person should equally contribute.
